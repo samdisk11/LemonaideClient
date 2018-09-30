@@ -34,6 +34,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label35 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,40 +44,38 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -114,6 +114,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(52, 51);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // tabControl1
             // 
@@ -147,6 +148,24 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(103, 148);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(81, 20);
+            this.button11.TabIndex = 45;
+            this.button11.Text = "SAVE PORT";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(12, 148);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(91, 20);
+            this.button10.TabIndex = 16;
+            this.button10.Text = "SAVE SERVER";
+            this.button10.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
@@ -245,6 +264,42 @@
             this.tabPage2.Text = "Clients";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox6.Location = new System.Drawing.Point(3, 158);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox6.Size = new System.Drawing.Size(209, 73);
+            this.textBox6.TabIndex = 9;
+            this.textBox6.Text = "textBox6";
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(0, 139);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(127, 15);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "CLIENT INFORMATION";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(6, 15);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(203, 121);
+            this.listBox2.TabIndex = 7;
+            // 
+            // label19
+            // 
+            this.label19.Location = new System.Drawing.Point(3, 3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(127, 15);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "CLIENTS";
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.listBox1);
@@ -255,6 +310,17 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Maps";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(3, 6);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(206, 225);
+            this.listBox1.TabIndex = 1;
             // 
             // tabPage4
             // 
@@ -269,23 +335,47 @@
             this.tabPage4.Text = "Credits";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // label5
             // 
-            this.button10.Location = new System.Drawing.Point(12, 148);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(91, 20);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "SAVE SERVER";
-            this.button10.UseVisualStyleBackColor = true;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(18, 194);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(173, 37);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Please dont ban us from finob";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button11
+            // label2
             // 
-            this.button11.Location = new System.Drawing.Point(103, 148);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(81, 20);
-            this.button11.TabIndex = 45;
-            this.button11.Text = "SAVE PORT";
-            this.button11.UseVisualStyleBackColor = true;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(18, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(173, 37);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Rocket - 2016 Studio Client";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(-3, -22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 99);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "samdisk11Finobe - Gui / Code";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage5
             // 
@@ -304,21 +394,13 @@
             this.tabPage5.Text = "Server";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // label37
             // 
-            this.label14.Location = new System.Drawing.Point(74, 8);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 15);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "SERVERS";
-            // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(7, 26);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(199, 134);
-            this.listBox3.TabIndex = 8;
+            this.label37.Location = new System.Drawing.Point(5, 207);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(186, 20);
+            this.label37.TabIndex = 8;
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button16
             // 
@@ -329,6 +411,23 @@
             this.button16.Text = "Add";
             this.button16.UseVisualStyleBackColor = true;
             // 
+            // label36
+            // 
+            this.label36.Location = new System.Drawing.Point(5, 195);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(186, 12);
+            this.label36.TabIndex = 7;
+            this.label36.Text = "CURRENT SERVER IP";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(7, 26);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(199, 134);
+            this.listBox3.TabIndex = 8;
+            // 
             // button14
             // 
             this.button14.Location = new System.Drawing.Point(142, 169);
@@ -338,6 +437,14 @@
             this.button14.Text = "Reset";
             this.button14.UseVisualStyleBackColor = true;
             // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(74, 8);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 15);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "SERVERS";
+            // 
             // button12
             // 
             this.button12.Location = new System.Drawing.Point(74, 169);
@@ -346,23 +453,6 @@
             this.button12.TabIndex = 13;
             this.button12.Text = "Remove";
             this.button12.UseVisualStyleBackColor = true;
-            // 
-            // label37
-            // 
-            this.label37.Location = new System.Drawing.Point(5, 207);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(186, 20);
-            this.label37.TabIndex = 8;
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label36
-            // 
-            this.label36.Location = new System.Drawing.Point(5, 195);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(186, 12);
-            this.label36.TabIndex = 7;
-            this.label36.Text = "CURRENT SERVER IP";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage6
             // 
@@ -380,22 +470,6 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Ports";
             this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(13, 27);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(186, 134);
-            this.listBox4.TabIndex = 5;
-            // 
-            // label21
-            // 
-            this.label21.Location = new System.Drawing.Point(82, 9);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(59, 15);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "PORTS";
             // 
             // button17
             // 
@@ -441,58 +515,21 @@
             this.label39.Text = "CURRENT SERVER PORT";
             this.label39.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label1
+            // listBox4
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(-3, -22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 99);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "samdisk11Finobe - Gui / Code";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(13, 27);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(186, 134);
+            this.listBox4.TabIndex = 5;
             // 
-            // label2
+            // label21
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(18, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 37);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Rocket - 2016 Studio Client";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(18, 194);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(173, 37);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Please dont ban us from finob";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // listBox1
-            // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 6);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(206, 225);
-            this.listBox1.TabIndex = 1;
+            this.label21.Location = new System.Drawing.Point(82, 9);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(59, 15);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "PORTS";
             // 
             // label28
             // 
@@ -548,42 +585,6 @@
             this.button5.TabIndex = 25;
             this.button5.Text = "DevSDK";
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.Location = new System.Drawing.Point(3, 3);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(127, 15);
-            this.label19.TabIndex = 6;
-            this.label19.Text = "CLIENTS";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 15);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(203, 121);
-            this.listBox2.TabIndex = 7;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox6.Location = new System.Drawing.Point(3, 158);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox6.Size = new System.Drawing.Size(209, 73);
-            this.textBox6.TabIndex = 9;
-            this.textBox6.Text = "textBox6";
-            // 
-            // label18
-            // 
-            this.label18.Location = new System.Drawing.Point(0, 139);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(127, 15);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "CLIENT INFORMATION";
             // 
             // MainMenu
             // 
