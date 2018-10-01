@@ -4,4 +4,12 @@ there's a test build ready at https://github.com/samdisk11/LemonaideClient/blob/
 https://discord.gg/7nvve3G
 # What works 
 discord rich presence
-UI
+and
+the UI
+# What doesnt work
+Launching Servers
+Selecting Maps
+Selecting Client Versions
+Selecting Saved Ports
+Selecting Saved Servers
+Launching Clients
