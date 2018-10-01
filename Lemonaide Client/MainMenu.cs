@@ -11,42 +11,30 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.ComponentModel;
-using DiscordRPC;
+
 namespace Lemonaide_Client
 {
     public partial class MainMenu : Form
     {
-        public DiscordRpcClient client;
-        void Initialize()
+        private DiscordRpc.EventHandlers handlers;
+
+        void StartDiscordMainMenu()
         {
-            /*
-            Create a discord client
-            NOTE: 	If you are using Unity3D, you must use the full constructor and define
-                     the pipe connection as DiscordRPC.IO.NativeNamedPipeClient
-            */
-            client = new DiscordRpcClient(495748400151527424, true, DiscordRPC.IO.NativeNamedPipeClient))					
-	
-	//Set the logger
+            handlers = new DiscordRpc.EventHandlers();
+            DiscordRpc.Initialize(GlobalVars.appid, ref handlers, true, "");
 
-            //Connect to the RPC
-            client.Initialize();
-
-            //Set the rich presence
-            client.SetPresence(new RichPresence()
-            {
-                Details = "Lemonaide Client",
-                State = "In Main Menu",
-                Assets = new Assets()
-                {
-                    LargeImageKey = "lemon",
-                    LargeImageText = "Lemonaide Client Launcher",
-                    SmallImageKey = "none"
-                }
-            });
+            GlobalVars.presence.largeImageKey = GlobalVars.imagekey_large;
+            GlobalVars.presence.state = "In Launcher";
+            GlobalVars.presence.details = "Main Menu";
+            GlobalVars.presence.largeImageText = "Lemonaide Client Beta";
+            DiscordRpc.UpdatePresence(ref GlobalVars.presence);
         }
+
+    
 
         public MainMenu()
         {
+            StartDiscordMainMenu();
             MessageBox.Show("UNSTABLE SOFTWARE! WE ARE A WORK IN PROGRESS.", "Lemonaide Launcher - Important Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             if (!File.Exists("servers.txt"))

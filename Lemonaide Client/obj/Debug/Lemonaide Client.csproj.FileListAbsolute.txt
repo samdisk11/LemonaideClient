@@ -1,9 +1,9 @@
-c:\users\jesus\documents\visual studio 2015\Projects\Lemonaide Client\Lemonaide Client\bin\Debug\Lemonaide Client.exe.config
-c:\users\jesus\documents\visual studio 2015\Projects\Lemonaide Client\Lemonaide Client\bin\Debug\Lemonaide Client.exe
-c:\users\jesus\documents\visual studio 2015\Projects\Lemonaide Client\Lemonaide Client\bin\Debug\Lemonaide Client.pdb
-c:\users\jesus\documents\visual studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide Client.csprojResolveAssemblyReference.cache
-c:\users\jesus\documents\visual studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide_Client.MainMenu.resources
-c:\users\jesus\documents\visual studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide_Client.Properties.Resources.resources
-c:\users\jesus\documents\visual studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide Client.csproj.GenerateResource.Cache
-c:\users\jesus\documents\visual studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide Client.exe
-c:\users\jesus\documents\visual studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide Client.pdb
+C:\Users\Jesus\Documents\Visual Studio 2015\Projects\Lemonaide Client\Lemonaide Client\bin\Debug\Lemonaide Client.exe.config
+C:\Users\Jesus\Documents\Visual Studio 2015\Projects\Lemonaide Client\Lemonaide Client\bin\Debug\Lemonaide Client.exe
+C:\Users\Jesus\Documents\Visual Studio 2015\Projects\Lemonaide Client\Lemonaide Client\bin\Debug\Lemonaide Client.pdb
+C:\Users\Jesus\Documents\Visual Studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide Client.csprojResolveAssemblyReference.cache
+C:\Users\Jesus\Documents\Visual Studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide_Client.MainMenu.resources
+C:\Users\Jesus\Documents\Visual Studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide_Client.Properties.Resources.resources
+C:\Users\Jesus\Documents\Visual Studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide Client.csproj.GenerateResource.Cache
+C:\Users\Jesus\Documents\Visual Studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide Client.exe
+C:\Users\Jesus\Documents\Visual Studio 2015\Projects\Lemonaide Client\Lemonaide Client\obj\Debug\Lemonaide Client.pdb
