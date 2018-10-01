@@ -124,7 +124,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(1, 70);
+            this.tabControl1.Location = new System.Drawing.Point(1, 77);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(220, 260);
@@ -157,6 +157,7 @@
             this.button11.TabIndex = 45;
             this.button11.Text = "SAVE PORT";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -166,6 +167,7 @@
             this.button10.TabIndex = 16;
             this.button10.Text = "SAVE SERVER";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // numericUpDown1
             // 
@@ -206,6 +208,7 @@
             this.textBox1.TabIndex = 7;
             this.textBox1.Text = "localhost";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -427,6 +430,7 @@
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(199, 134);
             this.listBox3.TabIndex = 8;
+            this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
             // button14
             // 
@@ -522,6 +526,7 @@
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(186, 134);
             this.listBox4.TabIndex = 5;
+            this.listBox4.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
             // label21
             // 

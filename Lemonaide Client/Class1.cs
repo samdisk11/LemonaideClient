@@ -26,6 +26,10 @@ namespace Lemonaide_Client
         public static DiscordRpc.RichPresence presence;
         public static string appid = "495748400151527424";
         public static string imagekey_large = "lemon";
+        // client shit
+        public static string SelectedClient = "";
+        public static string SelectedClientDesc = "";
+        public static string SelectedClientMD5 = "";
     }
 
     //Discord Rich Presence Integration :D
