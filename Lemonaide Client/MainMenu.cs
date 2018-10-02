@@ -32,9 +32,121 @@ namespace Lemonaide_Client
 
 
 
+
+        public MainMenu()
+        {
+          
+            GlobalVars.ClientDir = Path.Combine(Environment.CurrentDirectory, @"clients");
+            GlobalVars.ClientDir = GlobalVars.ClientDir.Replace(@"\\", @"\");
+            GlobalVars.ScriptsDir = Path.Combine(Environment.CurrentDirectory, @"scripts");
+            GlobalVars.ScriptsDir = GlobalVars.ScriptsDir.Replace(@"\\", @"\");
+            GlobalVars.MapsDir = Path.Combine(Environment.CurrentDirectory, @"maps");
+            GlobalVars.MapsDir = GlobalVars.MapsDir.Replace(@"\\", @"\");
+
+            StartDiscordMainMenu();
+            MessageBox.Show("UNSTABLE SOFTWARE! WE ARE A WORK IN PROGRESS.", "Lemonaide Launcher - Important Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            if (!File.Exists("servers.txt"))
+            {
+                File.Create("servers.txt").Dispose();
+                MessageBox.Show("No servers.txt detected. The Launcher will now create one.", "Lemonaide Launcher - Error while loading Main Menu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (!File.Exists("ports.txt"))
+            {
+                File.Create("ports.txt").Dispose();
+                MessageBox.Show("No ports.txt detected. The Launcher will now create one.", "Lemonaide Launcher - Error while loading Main Menu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            InitializeComponent();
+        }
+        
+        
+        private void label35_Click(object sender, EventArgs e)
+        {
+
+        }
+        void StartStudio()
+        {
+            string mapfile = GlobalVars.MapsDir + @"\\" + GlobalVars.Map;
+            string rbxexe = "";
+            
+                rbxexe = GlobalVars.ClientDir + @"\" + GlobalVars.SelectedClient + @"\Studio" +@"\RobloxStudioBeta.exe";
+            
+            string quote = "\"";
+            string args = "";
+            string contents = File.ReadAllText(GlobalVars.ScriptsDir + @"\\" + "studioNothing.lua");
+            ReadClientValues(GlobalVars.SelectedClient);
+            args = "-script \"loadstring('" + contents + "') " + quote + " " + quote + mapfile + quote;
+            try
+            {
+                Process client = new Process();
+                client.StartInfo.FileName = rbxexe;
+                client.StartInfo.Arguments = args;
+                client.EnableRaisingEvents = true;
+                ReadClientValues(GlobalVars.SelectedClient);
+                MessageBox.Show(rbxexe, "Lemonaide Launcher - debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                GlobalVars.presence.largeImageKey = GlobalVars.imagekey_large;
+                GlobalVars.presence.state = "In " + GlobalVars.SelectedClient + " Studio";
+                GlobalVars.presence.largeImageText = "Lemonaide Client Launcher";
+                DiscordRpc.UpdatePresence(ref GlobalVars.presence);
+            }
+            catch (Exception ex)
+            {
+                DialogResult result2 = MessageBox.Show("Failed to launch Lemonaide. (Error: " + ex.Message + ")", "Lemonaide Launcher - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            int parsedValue;
+            if (int.TryParse(numericUpDown1.Text, out parsedValue))
+            {
+                if (numericUpDown1.Text.Equals(""))
+                {
+                    //set it to the normal port, 53640. it wouldn't make any sense if we set it to 0.
+                    GlobalVars.RobloxPort = GlobalVars.DefaultRobloxPort;
+                }
+                else
+                {
+                    GlobalVars.RobloxPort = Convert.ToInt32(numericUpDown1.Text);
+                }
+            }
+            else
+            {
+                GlobalVars.RobloxPort = GlobalVars.DefaultRobloxPort;
+            }
+            label38.Text = GlobalVars.RobloxPort.ToString();
+        }
+
+        // load the client path and discription thingy
+        void ReadClientValues(string ClientName)
+        {
+            string clientpath = GlobalVars.ClientDir + @"//" + ClientName + @"//clientinfo.txt";
+
+            if (!File.Exists(clientpath))
+            {
+                MessageBox.Show("No clientinfo.txt detected with the client you chose. The client either cannot be loaded, or it is not available.", "Lemonaide Launcher - Error while loading client", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GlobalVars.SelectedClient = "2016";
+            }
+
+            LauncherFuncs.ReadClientValues(clientpath);
+
+           
+            // use clientinfo desc rather than labels
+
+            textBox6.Text = GlobalVars.SelectedClientDesc;
+            label26.Text = GlobalVars.SelectedClient;
+        }
+        void ListBox2SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GlobalVars.SelectedClient = listBox2.SelectedItem.ToString();
+            ReadClientValues(GlobalVars.SelectedClient);
+        }
+
         //stuff for the tabs, used to tell you what maps are there and your saved ports and IP's
         //very handy to have so you dont need notepad or sticky notes
-        void tabControl1SelectedIndexChanged(object sender, EventArgs e)
+
+        void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl1.SelectedTab == tabControl1.TabPages["tabPage2"])
             {
@@ -87,60 +199,6 @@ namespace Lemonaide_Client
                 listBox4.Items.Clear();
             }
         }
-
-        public MainMenu()
-        {
-            GlobalVars.ClientDir = Path.Combine(Environment.CurrentDirectory, @"clients");
-            GlobalVars.ClientDir = GlobalVars.ClientDir.Replace(@"\", @"\\");
-            GlobalVars.ScriptsDir = Path.Combine(Environment.CurrentDirectory, @"scripts");
-            GlobalVars.ScriptsDir = GlobalVars.ScriptsDir.Replace(@"\", @"\\");
-            GlobalVars.MapsDir = Path.Combine(Environment.CurrentDirectory, @"maps");
-            GlobalVars.MapsDir = GlobalVars.MapsDir.Replace(@"\", @"\\");
-
-            StartDiscordMainMenu();
-            MessageBox.Show("UNSTABLE SOFTWARE! WE ARE A WORK IN PROGRESS.", "Lemonaide Launcher - Important Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            if (!File.Exists("servers.txt"))
-            {
-                File.Create("servers.txt").Dispose();
-                MessageBox.Show("No servers.txt detected. The Launcher will now create one.", "Lemonaide Launcher - Error while loading Main Menu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            if (!File.Exists("ports.txt"))
-            {
-                File.Create("ports.txt").Dispose();
-                MessageBox.Show("No ports.txt detected. The Launcher will now create one.", "Lemonaide Launcher - Error while loading Main Menu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-                     InitializeComponent();
-        }
-        
-        
-        private void label35_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            int parsedValue;
-            if (int.TryParse(numericUpDown1.Text, out parsedValue))
-            {
-                if (numericUpDown1.Text.Equals(""))
-                {
-                    //set it to the normal port, 53640. it wouldn't make any sense if we set it to 0.
-                    GlobalVars.RobloxPort = GlobalVars.DefaultRobloxPort;
-                }
-                else
-                {
-                    GlobalVars.RobloxPort = Convert.ToInt32(numericUpDown1.Text);
-                }
-            }
-            else
-            {
-                GlobalVars.RobloxPort = GlobalVars.DefaultRobloxPort;
-            }
-            label38.Text = GlobalVars.RobloxPort.ToString();
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             // lmao u a hacker
@@ -187,6 +245,19 @@ namespace Lemonaide_Client
             catch (Exception)
             {
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("SDK NOT IMPLMENTED...", "Lemonaide Launcher - Client Developer SDK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Process.Start("SDK.exe");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StartStudio();
+            MessageBox.Show("Studio is now loading your chosen file...", "Lemonaide Launcher - Studio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }

@@ -96,6 +96,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Load Studio";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -129,6 +130,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(220, 260);
             this.tabControl1.TabIndex = 6;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -294,6 +296,7 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(203, 121);
             this.listBox2.TabIndex = 7;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.ListBox2SelectedIndexChanged);
             // 
             // label19
             // 
@@ -570,7 +573,7 @@
             // 
             this.label26.Location = new System.Drawing.Point(167, 23);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(69, 16);
+            this.label26.Size = new System.Drawing.Size(125, 20);
             this.label26.TabIndex = 24;
             this.label26.Text = "2016";
             // 
@@ -590,6 +593,7 @@
             this.button5.TabIndex = 25;
             this.button5.Text = "DevSDK";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // MainMenu
             // 
