@@ -35,7 +35,8 @@ namespace Lemonaide_Client
 
         public MainMenu()
         {
-          
+            GlobalVars.SelectedClient = "2016";
+            GlobalVars.SelectedClientDesc = "Select a Client!";
             GlobalVars.ClientDir = Path.Combine(Environment.CurrentDirectory, @"clients");
             GlobalVars.ClientDir = GlobalVars.ClientDir.Replace(@"\\", @"\");
             GlobalVars.ScriptsDir = Path.Combine(Environment.CurrentDirectory, @"scripts");
@@ -79,13 +80,14 @@ namespace Lemonaide_Client
             args = "-script \"loadstring('" + contents + "') " + quote + " " + quote + mapfile + quote;
             try
             {
-                Process client = new Process();
-                client.StartInfo.FileName = rbxexe;
-                client.StartInfo.Arguments = args;
-                client.EnableRaisingEvents = true;
+                Process studio = new Process();
+                studio.StartInfo.FileName = rbxexe;
+                studio.StartInfo.Arguments = args;
+                studio.EnableRaisingEvents = true;
                 ReadClientValues(GlobalVars.SelectedClient);
                 MessageBox.Show(rbxexe, "Lemonaide Launcher - debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                studio.Start();
+                studio.Exited += new EventHandler(StudioExited);
                 GlobalVars.presence.largeImageKey = GlobalVars.imagekey_large;
                 GlobalVars.presence.state = "In " + GlobalVars.SelectedClient + " Studio";
                 GlobalVars.presence.largeImageText = "Lemonaide Client Launcher";
@@ -95,6 +97,113 @@ namespace Lemonaide_Client
             {
                 DialogResult result2 = MessageBox.Show("Failed to launch Lemonaide. (Error: " + ex.Message + ")", "Lemonaide Launcher - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        void StartClient()
+        {
+            string mapfile = GlobalVars.MapsDir + @"\\" + GlobalVars.Map;
+            string rbxexe = "";
+
+            rbxexe = GlobalVars.ClientDir + @"\" + GlobalVars.SelectedClient + @"\Studio" + @"\RobloxStudioBeta.exe";
+
+            string quote = "\"";
+            string args = "";
+            string contents = File.ReadAllText(GlobalVars.ScriptsDir + @"\\" + "join.lua");
+            ReadClientValues(GlobalVars.SelectedClient);
+            args = "-script \"loadstring('" + contents + " JoinIP ="+ GlobalVars.IP +" JoinIP = "+GlobalVars.RobloxPort+"') " + quote + " " + quote + mapfile + quote;
+            try
+            {
+                Process client = new Process();
+                client.StartInfo.FileName = rbxexe;
+                client.StartInfo.Arguments = args;
+                client.EnableRaisingEvents = true;
+                ReadClientValues(GlobalVars.SelectedClient);
+                MessageBox.Show(rbxexe, "Lemonaide Launcher - debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show(args, "Lemonaide Launcher - debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                client.Start();
+                client.Exited += new EventHandler(StudioExited);
+                GlobalVars.presence.largeImageKey = GlobalVars.imagekey_large;
+                GlobalVars.presence.state = "In " + GlobalVars.SelectedClient + " Client";
+                GlobalVars.presence.details = "IP: " + GlobalVars.IP + "Port: " + GlobalVars.RobloxPort + "";
+                GlobalVars.presence.largeImageText = "Lemonaide Client Launcher";
+                DiscordRpc.UpdatePresence(ref GlobalVars.presence);
+            }
+            catch (Exception ex)
+            {
+                DialogResult result2 = MessageBox.Show("Failed to launch Lemonaide. (Error: " + ex.Message + ")", "Lemonaide Launcher - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        void StartSolo()
+        {
+            string mapfile = GlobalVars.MapsDir + @"\\" + GlobalVars.Map;
+            string rbxexe = "";
+
+            rbxexe = GlobalVars.ClientDir + @"\" + GlobalVars.SelectedClient + @"\Studio" + @"\RobloxStudioBeta.exe";
+
+            string quote = "\"";
+            string args = "";
+            string contents = File.ReadAllText(GlobalVars.ScriptsDir + @"\\" + "solo.lua");
+            ReadClientValues(GlobalVars.SelectedClient);
+            args = "-script \"loadstring('" + contents + "') " + quote + " " + quote + mapfile + quote;
+            try
+            {
+                Process client = new Process();
+                client.StartInfo.FileName = rbxexe;
+                client.StartInfo.Arguments = args;
+                client.EnableRaisingEvents = true;
+                ReadClientValues(GlobalVars.SelectedClient);
+                MessageBox.Show(rbxexe, "Lemonaide Launcher - debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show(args, "Lemonaide Launcher - debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                client.Start();
+                client.Exited += new EventHandler(StudioExited);
+                GlobalVars.presence.largeImageKey = GlobalVars.imagekey_large;
+                GlobalVars.presence.state = "In " + GlobalVars.SelectedClient + " Client";
+                GlobalVars.presence.details = "Solo Mode";
+                GlobalVars.presence.largeImageText = "Lemonaide Client Launcher";
+                DiscordRpc.UpdatePresence(ref GlobalVars.presence);
+            }
+            catch (Exception ex)
+            {
+                DialogResult result2 = MessageBox.Show("Failed to launch Lemonaide. (Error: " + ex.Message + ")", "Lemonaide Launcher - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        void StartServer()
+        {
+            string mapfile = GlobalVars.MapsDir + @"\\" + GlobalVars.Map;
+            string rbxexe = "";
+
+            rbxexe = GlobalVars.ClientDir + @"\" + GlobalVars.SelectedClient + @"\Studio" + @"\RobloxStudioBeta.exe";
+
+            string quote = "\"";
+            string args = "";
+            string contents = File.ReadAllText(GlobalVars.ScriptsDir + @"\\" + "server.lua");
+            ReadClientValues(GlobalVars.SelectedClient);
+            args = "-script \"loadstring('" + contents + " Port = " + GlobalVars.RobloxPort + "')  " + quote + " " + quote + mapfile + quote;
+            try
+            {
+                Process client = new Process();
+                client.StartInfo.FileName = rbxexe;
+                client.StartInfo.Arguments = args;
+                client.EnableRaisingEvents = true;
+                ReadClientValues(GlobalVars.SelectedClient);
+                MessageBox.Show(rbxexe, "Lemonaide Launcher - debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show(args, "Lemonaide Launcher - debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                client.Start();
+            }
+            catch (Exception ex)
+            {
+                DialogResult result2 = MessageBox.Show("Failed to launch Lemonaide. (Error: " + ex.Message + ")", "Lemonaide Launcher - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        void StudioExited(object sender, EventArgs e)
+        {
+            GlobalVars.presence.largeImageKey = GlobalVars.imagekey_large;
+            GlobalVars.presence.state = "In Launcher";
+            GlobalVars.presence.details = "Main Menu";
+            GlobalVars.presence.largeImageText = "Lemonaide Client Beta";
+            DiscordRpc.UpdatePresence(ref GlobalVars.presence);
         }
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -258,6 +367,21 @@ namespace Lemonaide_Client
             StartStudio();
             MessageBox.Show("Studio is now loading your chosen file...", "Lemonaide Launcher - Studio", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+        //connect
+        private void button3_Click(object sender, EventArgs e)
+        {
+            StartClient();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            StartSolo();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StartServer();
         }
     }
 }

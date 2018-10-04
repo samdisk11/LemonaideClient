@@ -106,6 +106,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Start Server";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox2
             // 
@@ -245,6 +246,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Connect";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -254,6 +256,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Solo Mode";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // tabPage2
             // 
